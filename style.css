@@ -46,7 +46,7 @@ h1 {
 }
 
 .dropbtn:hover {
-  background: linear-gradient(90deg, gold, orange);
+  background: #1abc9c;
   transform: scale(1.05);
 }
 
