@@ -37,7 +37,7 @@ function mostrarCards(lista) {
     card.innerHTML = `
       <div class="setor">${d.setor || ""}</div>
       <div class="nome">${d.nome || ""}</div>
-      <div class="contato"><i class="fa-brands fa-whatsapp" style="color: #25D366 ; "></i> ${d.celular || ""}</div>
+      <div class="contato"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> ${d.celular || ""}</div>
       <div class="contato"><i class="fa-solid fa-envelope"></i> ${d.email || ""}</div>
       <div class="contato"><i class="fa-solid fa-phone"></i> ${d.ramal || ""}</div>
     `;
@@ -56,3 +56,39 @@ document.getElementById("searchInput").addEventListener("input", e => {
   );
   mostrarCards(filtrados);
 });
+
+// ===== ABRIR PDFs NO SITE =====
+document.querySelectorAll(".dropdown-content a[href$='.pdf']").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const pdfUrl = link.getAttribute("href");
+    mostrarPDF(pdfUrl);
+  });
+});
+
+function mostrarPDF(url) {
+  const conteudo = document.querySelector(".container");
+  conteudo.innerHTML = `
+    <button id="voltar" style="
+      background: linear-gradient(90deg, orange, gold);
+      color: black;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: bold;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+      cursor: pointer;
+      margin-bottom: 15px;
+    ">⬅ Voltar</button>
+
+    <iframe src="${url}" style="
+      width: 95%;
+      height: 90vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    "></iframe>
+  `;
+
+  document.getElementById("voltar").addEventListener("click", () => location.reload());
+}
