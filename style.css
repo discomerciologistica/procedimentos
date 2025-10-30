@@ -233,8 +233,4 @@ h1 {
     width: 90%;
   }
 }
-.dropbtn {
-  width: 80%; /* ou 100% para tela cheia */
-  padding: 14px 0;
-  font-size: 1.1rem;
-}
+
