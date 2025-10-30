@@ -190,19 +190,20 @@ h1 {
   .menu ul {
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* 🔹 Espaço entre botões principais */
+    gap: 30px;
   }
 
   .dropdown {
-    width: 90%;
+    width: auto; /* deixa o botão acompanhar o texto */
   }
 
   .dropbtn {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto; /* remove largura fixa */
+    padding: 14px 36px; /* dá mais espaço interno */
     text-align: center;
     font-size: 1rem;
-    padding: 14px 0;
+    white-space: nowrap; /* impede quebra de linha */
   }
 
   .dropdown-content {
@@ -218,19 +219,3 @@ h1 {
     box-sizing: border-box;
   }
 }
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .search-box input {
-    width: 90%;
-    font-size: 0.9rem;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
