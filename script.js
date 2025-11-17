@@ -93,7 +93,7 @@ function mostrarPDF(url) {
   document.getElementById("voltar").addEventListener("click", () => location.reload());
 }
 
-// ===== POP UP DE NOVO PROCEDIMENTO =====
+// ===== POP UP DE NOVO PROCEDIMENTO no arquivo json quando quiser colocar um pop up é so deixar como ativo e se não quiser é só deixar como false =====
 function mostrarPopup(mensagem) {
   const popup = document.createElement("div");
   popup.id = "popupAviso";
