@@ -252,3 +252,7 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.login-box {
+    margin-left: -80px;  /* Ajuste o valor conforme a aparência desejada */
+}
