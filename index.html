@@ -68,6 +68,28 @@
             <a href="nf de bonificação.pdf">NF de Bonificação</a>
           </div>
         </li>
+        <body>
+<script>
+  if (localStorage.getItem("auth") !== "ok") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<button onclick="deslogar()" style="
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, orange, gold);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.6);
+">
+  Sair
+</button>
       </ul>
     </nav>
 
