@@ -116,13 +116,23 @@ fetch("popup.json")
   .then(cfg => {
     if (cfg.ativo) {
 
-      // Verifica se o popup já foi exibido
-      const jaMostrou = localStorage.getItem("popup_mostrado_v1");
+      const agora = Date.now(); 
+      const ultimaVez = localStorage.getItem("popup_mostrado_v1_tempo");
 
-      // Se ainda não mostrou, mostra e grava
-      if (!jaMostrou) {
+      // 10 minutos em milissegundos
+      const dezMin = 10 * 60 * 1000;
+
+      // Verifica:
+      // 1. Se nunca mostrou, OU
+      // 2. Se já passou 10 minutos
+      const podeMostrar =
+        !ultimaVez || (agora - parseInt(ultimaVez)) > dezMin;
+
+      if (podeMostrar) {
         mostrarPopup(cfg.mensagem);
-        localStorage.setItem("popup_mostrado_v1", "true");
+
+        // Marca que mostrou (versão + tempo)
+        localStorage.setItem("popup_mostrado_v1_tempo", agora);
       }
     }
   })
