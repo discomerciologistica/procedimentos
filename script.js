@@ -115,7 +115,15 @@ fetch("popup.json")
   .then(r => r.json())
   .then(cfg => {
     if (cfg.ativo) {
-      mostrarPopup(cfg.mensagem);
+
+      // Verifica se o popup já foi exibido
+      const jaMostrou = localStorage.getItem("popup_mostrado_v1");
+
+      // Se ainda não mostrou, mostra e grava
+      if (!jaMostrou) {
+        mostrarPopup(cfg.mensagem);
+        localStorage.setItem("popup_mostrado_v1", "true");
+      }
     }
   })
   .catch(() => console.log("Popup desativado ou arquivo não encontrado"));
