@@ -137,3 +137,54 @@ fetch("popup.json")
     }
   })
   .catch(() => console.log("Popup desativado ou arquivo não encontrado"));
+
+// ===== BUSCA GLOBAL DO SITE =====
+const itensBusca = [];
+
+// Captura todos os links do menu
+document.querySelectorAll(".dropdown-content a").forEach(link => {
+  itensBusca.push({
+    texto: link.textContent.toLowerCase(),
+    label: link.textContent,
+    url: link.getAttribute("href")
+  });
+});
+
+const campoBusca = document.getElementById("buscaGlobal");
+const resultadosDiv = document.getElementById("resultadosBusca");
+
+if (campoBusca) {
+  campoBusca.addEventListener("input", () => {
+    const termo = campoBusca.value.toLowerCase().trim();
+    resultadosDiv.innerHTML = "";
+
+    if (!termo) {
+      resultadosDiv.style.display = "none";
+      return;
+    }
+
+    const resultados = itensBusca.filter(item =>
+      item.texto.includes(termo)
+    );
+
+    if (resultados.length === 0) {
+      resultadosDiv.style.display = "block";
+      resultadosDiv.innerHTML = "<div class='resultado-item'>Nenhum resultado</div>";
+      return;
+    }
+
+    resultadosDiv.style.display = "block";
+
+    resultados.slice(0, 8).forEach(item => {
+      const div = document.createElement("div");
+      div.className = "resultado-item";
+      div.textContent = item.label;
+
+      div.onclick = () => {
+        window.location.href = item.url;
+      };
+
+      resultadosDiv.appendChild(div);
+    });
+  });
+}
