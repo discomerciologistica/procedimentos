@@ -253,4 +253,40 @@ h1 {
   cursor: pointer;
 }
 
+/* ===== BUSCA GLOBAL ===== */
+.search-global {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#buscaGlobal {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#resultadosBusca {
+  background: rgba(0,0,0,0.9);
+  max-width: 500px;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.resultado-item {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.resultado-item:hover {
+  background: gold;
+  color: black;
+}
 
