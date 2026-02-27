@@ -99,7 +99,7 @@ function mostrarPopup(mensagem) {
   popup.id = "popupAviso";
   popup.innerHTML = `
     <div class="popup-conteudo">
-      <p>${mensagem}</p>
+      <p>${mensagem.replace(/<br><br>/g, "<hr class='linha-popup'>")}</p>
       <button id="fecharPopup">Ok</button>
     </div>
   `;
@@ -111,32 +111,67 @@ function mostrarPopup(mensagem) {
 }
 
 // Buscar status no popup.json
-fetch("popup.json")
+    fetch("popup.json?V=1")
   .then(r => r.json())
   .then(cfg => {
     if (cfg.ativo) {
 
-      const agora = Date.now(); 
+      const agora = Date.now();
       const ultimaVez = localStorage.getItem("popup_mostrado_v1_tempo");
-
-      // 10 minutos em milissegundos
       const dezMin = 10 * 60 * 1000;
 
-      // Verifica:
-      // 1. Se nunca mostrou, OU
-      // 2. Se já passou 10 minutos
       const podeMostrar =
         !ultimaVez || (agora - parseInt(ultimaVez)) > dezMin;
 
       if (podeMostrar) {
-        mostrarPopup(cfg.mensagem);
 
-        // Marca que mostrou (versão + tempo)
+        // 🔥 DESTACAR TODAS AS DATAS NO INÍCIO DE CADA BLOCO
+        let msg = cfg.mensagem;
+
+        // Pega datas no início OU após <br><br>
+        let regexDatas = /(?:^|<br><br>)(\d{1,2}\/\d{1,2}\/\d{2,4})/g;
+
+        let msgFormatada = msg.replace(
+          regexDatas,
+          (match, data) =>
+            match.replace(
+              data,
+              `<span style="color: red; font-weight: bold; font-size: 20px;">${data}</span>`
+            )
+        );
+
+        mostrarPopup(msgFormatada);
+
         localStorage.setItem("popup_mostrado_v1_tempo", agora);
       }
     }
   })
   .catch(() => console.log("Popup desativado ou arquivo não encontrado"));
+
+
+// ===== BOTÃO DE NOTIFICAÇÕES =====
+document.getElementById("botaoNotificacoes").addEventListener("click", () => {
+  fetch("popup.json?btn=1")
+    .then(r => r.json())
+    .then(cfg => {
+
+      // 🔥 DESTACAR TODAS AS DATAS AO CLICAR NO BOTÃO TAMBÉM
+      let msg = cfg.mensagem;
+      let regexDatas = /(?:^|<br><br>)(\d{1,2}\/\d{1,2}\/\d{2,4})/g;
+
+      let msgFormatada = msg.replace(
+        regexDatas,
+        (match, data) =>
+          match.replace(
+            data,
+            `<span style="color: red; font-weight: bold; font-size: 20px;">${data}</span>`
+          )
+      );
+
+      mostrarPopup(msgFormatada);
+    })
+    .catch(() => alert("Erro ao carregar notificações!"));
+});
 
 // ===== BUSCA GLOBAL DO SITE =====
 const itensBusca = [];
