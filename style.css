@@ -410,3 +410,19 @@ h1 {
   top: 55px;
   left: 10px;
 }
+
+/* ===== REPOSICIONAR BOTÕES MOBILE ===== */
+
+/* botão notificações menor */
+#botaoNotificacoes {
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* botão downloads abaixo do notificações */
+.dropdown-lateral {
+  top: 55px;
+  left: 10px;
+}
