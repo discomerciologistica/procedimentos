@@ -98,16 +98,19 @@ function mostrarPopup(mensagem) {
   const popup = document.createElement("div");
   popup.id = "popupAviso";
   popup.innerHTML = `
-    <div class="popup-conteudo">
-      <p>${mensagem.replace(/<br><br>/g, "<hr class='linha-popup'>")}</p>
-      <button id="fecharPopup">Ok</button>
-    </div>
-  `;
+  <div class="popup-conteudo">
+    
+    <span class="fechar-popup">&times;</span>
+    
+    <p>${mensagem.replace(/<br><br>/g, "<hr class='linha-popup'>")}</p>
+    
+  </div>
+`;
   document.body.appendChild(popup);
 
-  document.getElementById("fecharPopup").addEventListener("click", () => {
-    popup.remove();
-  });
+  popup.querySelector(".fechar-popup").addEventListener("click", () => {
+  popup.remove();
+});
 }
 
 // Buscar status no popup.json
