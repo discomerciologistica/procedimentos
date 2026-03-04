@@ -348,8 +348,8 @@ h1 {
 
 .dropbtn-lateral {
   display: inline-block;
-  background: linear-gradient(90deg, orange, gold);
-  color: black;
+  background: linear-gradient(90deg, #28a745, #5cd65c);
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px;
