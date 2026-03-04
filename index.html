@@ -7,53 +7,77 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
+  <button id="botaoNotificacoes">🔔 Notificações</button>
 
-  <!-- ===== TOPO COM BOTÕES ===== -->
-  <div class="topo-botoes">
-    <button id="botaoNotificacoes">🔔 Notificações</button>
-
-    <div class="dropdown-lateral">
-      <a class="dropbtn-lateral">📥 Downloads</a>
-      <div class="dropdown-content-lateral">
-        <a href="FORMULÁRIO DEVOLUÇÃO V3.xlsx" target="_blank">Formulário de Devolução</a>
-        <a href="BT 279 - Check-List para ordens de serviço - LCOM Rev00.pdf" target="_blank">MIDEA - Formulário Garantia</a>
-        <a href="Formulário de Garantia DAIKIN (9).xlsm" target="_blank">DAIKIN - Formulário Garantia</a>
-        <a href="FORMULARIO GREE.pdf" target="_blank">GREE - Formulário Garantia</a>
-        <a href="OSG DIS (1).xlsx" target="_blank">TCL e TRANE - Formulário Garantia</a>
-      </div>
-    </div>
+<div class="dropdown-lateral">
+  <a class="dropbtn-lateral">📥Downloads</a>
+  <div class="dropdown-content-lateral">
+    <a href="FORMULÁRIO DEVOLUÇÃO V3.xlsx" target="_blank">Formulário de Devolução</a>
+    <a href="BT 279 - Check-List para ordens de serviço - LCOM Rev00.pdf" target="_blank">MIDEA - Formulário Garantia</a>
+    <a href="Formulário de Garantia DAIKIN (9).xlsm" target="_blank">DAIKIN - Formulário Garantia</a>
+    <a href="FORMULARIO GREE.pdf" target="_blank">GREE - Formulário Garantia</a>
+    <a href="OSG DIS (1).xlsx" target="_blank">TCL e TRANE - Formulário Garantia</a>
+    <a href="RT-NWS.E.01-REV.01-ANÁLISE DE COMPRESSOR PARA GARANTIA L-CAC E RAC (6).pptx" target="_blank">LG - Formulário Garantia COMPRESSOR</a>
+    <a href="RT-NWS.E.02.REV.01-ANÁLISE DE PLACAS PARA GARANTIA L-CAC E RAC (1) (13).pptx" target="_blank">LG - Formulário Garantia PLACA</a>
+    <a href="RT-NWS.E.03.REV.01-ANÁLISE DE MOTOR PARA GARANTIA L-CAC E RAC (1) (2).pptx" target="_blank">LG - Formulário Garantia MOTOR</a>
+    <a href="RT-NWS.E.04.REV.01-ANÁLISE DE SERPENTINA PARA GARANTIA L-CAC E RAC (6).pptx" target="_blank">LG - Formulário Garantia SERPENTINA</a>
+    <a href="RT-NWS.E.05.REV.01 - ANÁLISE DE PEÇAS EM GERAL PARA GARANTIA L-CAC E RAC EXCLUINDO MOTOR, PLACAS, SERPENTINA E COMPRESSOR (12).pptx" target="_blank">LG - Formulário Garantia PEÇAS EM GERAL</a>
   </div>
+</div>
 
-  <!-- ===== BUSCA GLOBAL ===== -->
-  <div class="search-global">
-    <input type="text" id="buscaGlobal" placeholder="🔎 Pesquisar procedimentos...">
-    <div id="resultadosBusca"></div>
-  </div>
+<div class="search-global">
+  <input type="text" id="buscaGlobal" placeholder="🔎 Pesquisar procedimentos...">
+  <div id="resultadosBusca"></div>
+</div>
 
-  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
   <div class="container">
-
     <h1>PROCEDIMENTOS</h1>
 
-    <!-- ===== MENU PRINCIPAL ===== -->
+    <!-- 🔹 MENU PRINCIPAL -->
     <nav class="menu">
       <ul>
-
         <li class="dropdown">
           <a href="#" class="dropbtn">PÓS VENDAS</a>
           <div class="dropdown-content">
             <a href="como funciona o atendimento no pos vendas.pdf">Como Funciona o Atendimento?</a>
+            <a href="quais assuntos posso abrir um chamado no sac.pdf">Quais Assuntos Abrir um Chamado no SAC?</a>
+            <a href="Devolução - Troca - Erro venda.pdf">Devolução - Troca - Erro Venda</a>
+            <a href="devolução troca erro cliente.pdf">Devolução - Troca - Erro Cliente</a>
+            <a href="nf de devolução cliente contribuinte.pdf">NF de Devolução - Contribuinte</a>
+            <a href="FORMULÁRIO DEVOLUÇÃO V3.xlsx">Download - Formulário de Devolução</a>
+            <a href="desconto taxa administrativa01.pdf">Desconto Taxa Administrativa - RT</a>
+            <a href="cancelamento com pedido entregue.pdf">Cancelamento com Pedido Entregue</a>
+            <a href="cancelamento com pedido em transito.pdf">Cancelamento com Pedido em Trânsito</a>
+            <a href="cancelamento pedido nao coletado.pdf">Cancelamento Pedido não Coletado</a>
+            <a href="fotos para devolução.pdf">📸 Registro de fotos devolução</a>
             <a href="garantia.pdf">Garantia</a>
+            <a href="garantia prazos.pdf">Garantia - Prazos</a>
+            <a href="garantia troca de produto com avaria.pdf">Garantia - Troca de Produto com Avaria</a>
+            <a href="garantia produto com defeito.pdf">Garantia - Produto com Defeito</a>
+            <a href="garantia itens faltantes.pdf">Garantia - Itens Faltantes</a>
+            <a href="ajuste de rt com pedido entregue.pdf">Ajuste de RT com Pedido Entregue</a>
+            <a href="troca de nota fiscal.pdf">Troca de Nota Fiscal</a>
+            <a href="venda de danificados.pdf">Venda de Danificados</a>
           </div>
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropbtn">LOGÍSTICA</a>
           <div class="dropdown-content">
+            <a href="https://discomerciologistica.github.io/prazostransportadoras/" target="_blank">Prazos de Entrega</a>
             <a href="rastreio.pdf">Links para Rastreio</a>
+            <a href="https://drive.google.com/drive/folders/1kQxoINEv2PSddw10M72g3qth0l8aDc9f?usp=drive_link">Em Rota GFW</a>
+            <a href="motivos para abertura de uma ocorrencia.pdf">Quais Assuntos Abrir um Chamado em Ocorrência?</a>
+            <a href="agendamento de entrega.pdf">Agendamento de Entrega</a>
+            <a href="entrega dedicada dia e periodo.pdf">Entrega Dedicada - Dia ou Período</a>
+            <a href="check list dos dados cadastrais endereço de entrega.pdf">Check list - Dados Cadastrais - Endereço de Entrega</a>
+            <a href="entrega vertical transportadoras.pdf">Entrega Vertical</a>
+            <a href="entregas em condominios fechados com ruas internas.pdf">Entregas em Condomínios Fechados</a>
+            <a href="entrega em zona rural.pdf">Entrega em Zona Rural</a>
             <a href="extravio de mercadoria.pdf">Extravio de Mercadoria</a>
+            <a href="retira.pdf">Retira</a>
+            <a href="performance.pdf">Performance Transportadoras</a>
           </div>
         </li>
 
@@ -61,27 +85,73 @@
           <a href="#" class="dropbtn">FATURAMENTO</a>
           <div class="dropdown-content">
             <a href="cancelamento de nota fiscal.pdf">Cancelamento de Nota Fiscal</a>
+            <a href="consulta ie.pdf">Consulta IE</a>
+            <a href="http://www.sintegra.gov.br/">SINTEGRA</a>
+            <a href="preenchimento campo pedido.pdf">Preenchimento - Campo Pedido</a>
+            <a href="nf de bonificação.pdf">NF de Bonificação</a>
+            <a href="nf de devolução cliente contribuinte.pdf">NF de Devolução - Contribuinte</a>
           </div>
         </li>
 
+        <li class="dropdown">
+          <a href="#" class="dropbtn">ANÁLISE DE CRÉDITO</a>
+          <div class="dropdown-content">
+            <a href="funções.pdf">Funções</a>
+            
+          </div>
+        </li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropbtn">FINANCEIRO</a>
+          <div class="dropdown-content">
+            <a href="funções financeiro.pdf">Funções</a>
+            <a href="desconto taxa administrativa01.pdf">Desconto Taxa Administrativa - RT</a>
+            
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">LIBERAÇÃO DE CÓDIGOS</a>
+          <div class="dropdown-content">
+            <a href="liberação de codigos.pdf">Procedimento para Liberação</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWl1Oq3WFWfdW12ylid90sZw8y3Ec5m86T6xDdNIEAv5GowQ/viewform">Link - Solicitação de Liberação</a>
+            <a href="https://docs.google.com/spreadsheets/d/1VmDsazDorN7vwz6cV2aBB5qBWQz9NabUVV5NBdhpSD8/edit?gid=2003272604#gid=2003272604">Link - Resposta da Liberação</a>
+          </div>
+        </li>
+
+         <li class="dropdown">
+          <a href="#" class="dropbtn">REGULAMENTO INTERNO</a>
+          <div class="dropdown-content">
+            <a href="Regulamento Interno .pdf">Regulamento Interno</a>
+          </div>
+        </li>
+          
+          <li class="dropdown">
+          <a href="#" class="dropbtn">COMUNICADOS</a>
+          <div class="dropdown-content">
+            <a href="Desconto taxa admnistrativa.pdf">Desconto Taxa Administrativa</a>
+            
+          </div>
+        </li>
       </ul>
     </nav>
 
-    <!-- ===== BUSCA CONTATOS ===== -->
+    <!-- 🔹 CAMPO DE PESQUISA -->
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="🔍 Buscar por nome ou setor...">
     </div>
 
+    <!-- 🔹 TÍTULO DE CONTATOS -->
     <h2 class="titulo-contatos">CONTATOS</h2>
 
+    <!-- 🔹 CARDS DE EQUIPE -->
     <div id="cardsContainer" class="cards-container"></div>
 
+    <!-- 🔹 INFORMAÇÕES FINAIS -->
     <p id="contadorResultados"></p>
     <p id="ultimaAtualizacao">Última atualização: --</p>
-
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
