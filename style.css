@@ -19,94 +19,7 @@ h1 {
   margin-bottom: 5vh;
 }
 
-/* ===== TOPO COM BOTÕES ===== */
-
-.topo-botoes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-#botaoNotificacoes {
-  background: linear-gradient(90deg, orange, gold);
-  color: black;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
-  transition: 0.3s;
-}
-
-#botaoNotificacoes:hover {
-  transform: scale(1.05);
-}
-
-/* ===== DOWNLOADS ===== */
-
-.dropdown-lateral {
-  position: relative;
-}
-
-.dropbtn-lateral {
-  display: inline-block;
-  background: linear-gradient(90deg, orange, gold);
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dropbtn-lateral:hover {
-  transform: scale(1.05);
-}
-
-.dropdown-content-lateral {
-  display: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  flex-direction: column;
-  background-color: rgba(0,0,0,0.9);
-  min-width: 220px;
-  border-radius: 10px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-  margin-top: 8px;
-  padding: 10px 0;
-  z-index: 1000;
-}
-
-.dropdown-content-lateral a {
-  width: 90%;
-  color: black;
-  background: linear-gradient(90deg, white, gold);
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin: 5px auto;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-  transition: 0.3s;
-  text-align: center;
-}
-
-.dropdown-content-lateral a:hover {
-  transform: scale(1.05);
-}
-
-.dropdown-lateral:hover .dropdown-content-lateral {
-  display: flex;
-}
-
 /* ===== MENU ===== */
-
 .menu {
   display: flex;
   justify-content: center;
@@ -177,48 +90,31 @@ h1 {
   transform: scale(1.05);
 }
 
-/* ===== BUSCAS ===== */
-
-.search-global,
+/* ===== PESQUISA ===== */
 .search-box {
   margin: 20px auto;
-  text-align: center;
 }
 
-#buscaGlobal,
+.titulo-contatos {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: gold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
 .search-box input {
   width: 80%;
   max-width: 500px;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
   border: none;
+  outline: none;
   font-size: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-#resultadosBusca {
-  background: rgba(0,0,0,0.9);
-  max-width: 500px;
-  margin: 10px auto;
-  border-radius: 10px;
-  overflow: hidden;
-  display: none;
-}
-
-.resultado-item {
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.resultado-item:hover {
-  background: gold;
-  color: black;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
 /* ===== CARDS ===== */
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -239,7 +135,6 @@ h1 {
   transition: transform 0.3s ease;
   backdrop-filter: blur(6px);
 }
-
 .card:hover {
   transform: translateY(-5px);
 }
@@ -271,7 +166,6 @@ h1 {
 }
 
 /* ===== RODAPÉ ===== */
-
 #contadorResultados {
   margin-top: 25px;
   font-weight: bold;
@@ -284,17 +178,32 @@ h1 {
   text-shadow: 1px 1px 2px black;
 }
 
-/* ===== RESPONSIVO ===== */
-
+/*/* Ajuste para telas pequenas */
+/* ===== RESPONSIVIDADE ===== */
+/* ===== AJUSTE RESPONSIVO SEM MUDAR FUNCIONAMENTO ===== */
 @media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .menu ul {
     flex-direction: column;
-    gap: 25px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .dropdown {
+    width: auto; /* deixa o botão acompanhar o texto */
   }
 
   .dropbtn {
-    padding: 14px 36px;
-    white-space: nowrap;
+    display: inline-block;
+    width: auto; /* remove largura fixa */
+    padding: 14px 36px; /* dá mais espaço interno */
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap; /* impede quebra de linha */
   }
 
   .dropdown-content {
@@ -305,12 +214,237 @@ h1 {
   }
 
   .dropdown-content a {
+    font-size: 0.95rem;
     width: 100%;
+    box-sizing: border-box;
   }
+}
 
-  #botaoNotificacoes,
-  .dropbtn-lateral {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
+#popupAviso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-conteudo {
+  background: white;
+  color: black;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  max-height: 80vh;      /* <-- NOVO */
+  overflow-y: auto;      /* <-- NOVO */
+  box-shadow: 0 0 10px black;
+}
+
+
+
+.popup-conteudo button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: none;
+  background: gold;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#botaoNotificacoes {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(90deg, orange, gold);
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+#botaoNotificacoes:hover {
+  transform: scale(1.05);
+}
+
+.linha-popup {
+  border: none;
+  border-top: 2px solid gold;
+  margin: 12px 0;
+  width: 100%;
+}
+
+/* Alinhar texto do popup à esquerda */
+#popupAviso .popup-conteudo {
+    text-align: left !important;
+}
+
+/* Também alinha cada linha dentro do popup */
+#popupAviso .popup-conteudo p {
+    text-align: left !important;
+    margin-bottom: 10px;
+}
+
+#popupAviso .popup-conteudo button {
+    display: block;
+    margin: 20px auto 0 auto; /* cima - lados - baixo */
+}
+
+/* ===== BUSCA GLOBAL ===== */
+.search-global {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#buscaGlobal {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#resultadosBusca {
+  background: rgba(0,0,0,0.9);
+  max-width: 500px;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.resultado-item {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.resultado-item:hover {
+  background: gold;
+  color: black;
+}
+
+/* ===== BOTÃO DOWNLOADS LATERAL ===== */
+
+.dropdown-lateral {
+  position: fixed;
+  top: 70px; /* abaixo do botão notificações */
+  left: 15px;
+  z-index: 9999;
+}
+
+.dropbtn-lateral {
+  display: inline-block;
+  background: linear-gradient(90deg, orange, gold);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropbtn-lateral:hover {
+  transform: scale(1.05);
+}
+
+.dropdown-content-lateral {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.85);
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  margin-top: 8px;
+  padding: 10px 0;
+}
+
+.dropdown-content-lateral a {
+  width: 90%;
+  color: black;
+  background: linear-gradient(90deg, white, gold);
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 5px auto;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.dropdown-content-lateral a:hover {
+  transform: scale(1.05);
+}
+
+.dropdown-lateral:hover .dropdown-content-lateral {
+  display: flex;
+}
+
+/* ===== REPOSICIONAR BOTÕES MOBILE ===== */
+
+/* botão notificações menor */
+#botaoNotificacoes {
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* botão downloads abaixo do notificações */
+.dropdown-lateral {
+  top: 55px;
+  left: 10px;
+}
+
+/* ===== REPOSICIONAR BOTÕES MOBILE ===== */
+
+/* botão notificações menor */
+#botaoNotificacoes {
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* botão downloads abaixo do notificações */
+.dropdown-lateral {
+  top: 55px;
+  left: 10px;
+}
+
+/* ===== BOTÃO X DO POPUP ===== */
+
+.popup-conteudo {
+  position: relative; /* necessário para posicionar o X */
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+}
+
+.fechar-popup:hover {
+  color: red;
+  transform: scale(1.2);
 }
