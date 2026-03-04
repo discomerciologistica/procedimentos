@@ -444,7 +444,13 @@ h1 {
   transition: 0.3s;
 }
 
+
 .fechar-popup:hover {
   color: red;
   transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .container {
+    margin-top: 140px; /* espaço suficiente para os dois botões */
+  }
 }
