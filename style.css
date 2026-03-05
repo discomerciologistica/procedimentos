@@ -465,3 +465,14 @@ h1 {
     margin-top: 120px;
   }
 }
+@media (max-width: 768px) {
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.ativo .dropdown-content {
+    display: flex;
+  }
+
+}
