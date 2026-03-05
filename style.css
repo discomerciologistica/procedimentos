@@ -458,7 +458,16 @@ h1 {
   align-items: center;
   gap: 15px;
 }
-
+#botaoNotificacoes,
+.dropbtn-lateral {
+  padding: 10px 20px;
+  font-size: 14px;
+  min-width: 170px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 @media (max-width: 768px) {
