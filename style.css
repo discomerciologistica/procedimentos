@@ -452,6 +452,14 @@ h1 {
   color: red;
   transform: scale(1.2);
 }
+.topo-botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+
 
 @media (max-width: 768px) {
   .search-global {
