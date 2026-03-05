@@ -425,8 +425,10 @@ h1 {
 
 /* botão downloads abaixo do notificações */
 .dropdown-lateral {
-  top: 40px;
+  top: 55px;
   left: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
 }
 
 /* ===== BOTÃO X DO POPUP ===== */
