@@ -465,17 +465,3 @@ h1 {
     margin-top: 120px;
   }
 }
-@media (max-width: 768px) {
-
-  .menu ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  .dropdown {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-}
