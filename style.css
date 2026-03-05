@@ -417,7 +417,7 @@ h1 {
 
 #botaoNotificacoes {
   position: fixed;
-  top: 15px;
+  top: 10px;
   left: 15px;
   background: linear-gradient(90deg, orange, gold);
   color: black;
