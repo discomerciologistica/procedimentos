@@ -433,7 +433,7 @@ h1 {
 
 .dropdown-lateral {
   position: fixed;
-  top: 40px;   /* fica logo abaixo */
+  top: 45px;   /* fica logo abaixo */
   left: 10px;  /* exatamente igual */
   z-index: 9999;
 }
