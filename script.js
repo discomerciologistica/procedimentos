@@ -231,16 +231,3 @@ document.querySelectorAll('.dropbtn').forEach(btn => {
     e.preventDefault();
   });
 });
-document.querySelectorAll(".dropbtn").forEach(botao => {
-  botao.addEventListener("click", function (e) {
-
-    if (window.innerWidth <= 768) {
-      e.preventDefault(); // impede abrir link
-
-      const dropdown = this.parentElement;
-
-      dropdown.classList.toggle("ativo");
-    }
-
-  });
-});
