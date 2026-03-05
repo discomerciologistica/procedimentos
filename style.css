@@ -418,7 +418,7 @@ h1 {
 #botaoNotificacoes {
   position: fixed;
   top: 15px;
-  left: 15px;
+  Right: 15px;
   background: linear-gradient(90deg, orange, gold);
   color: black;
   padding: 10px 20px;
@@ -433,7 +433,7 @@ h1 {
 
 .dropdown-lateral {
   position: fixed;
-  top: 60px;   /* fica logo abaixo */
+  top: 15px;   /* fica logo abaixo */
   left: 15px;  /* exatamente igual */
   z-index: 9999;
 }
