@@ -413,22 +413,29 @@ h1 {
   font-size: 12px;
 }
 
-/* ===== REPOSICIONAR BOTÕES MOBILE ===== */
+/* ===== BOTÕES FIXOS ===== */
 
-/* botão notificações menor */
 #botaoNotificacoes {
-  top: 10px;
-  left: 10px;
-  padding: 8px 12px;
-  font-size: 12px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(90deg, orange, gold);
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+  transition: 0.3s;
 }
 
-/* botão downloads abaixo do notificações */
 .dropdown-lateral {
-  top: 40px;
-  left: 10px;
-  padding: 8px 12px;
-  font-size: 12px;
+  position: fixed;
+  top: 60px;   /* fica logo abaixo */
+  left: 15px;  /* exatamente igual */
+  z-index: 9999;
 }
 
 /* ===== BOTÃO X DO POPUP ===== */
