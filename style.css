@@ -416,7 +416,7 @@ h1 {
 /* ===== BOTÕES FIXOS ===== */
 
 #botaoNotificacoes {
-  position: fixed;
+  position: ;
   top: 15px;
   Right: 15px;
   background: linear-gradient(90deg, orange, gold);
