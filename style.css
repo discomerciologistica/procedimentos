@@ -341,7 +341,7 @@ h1 {
 
 .dropdown-lateral {
   position: fixed;
-  top: 70px; /* abaixo do botão notificações */
+  top: 15px; /* abaixo do botão notificações */
   right: 15px;
   z-index: 9999;
 }
